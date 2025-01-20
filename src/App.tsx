@@ -11,6 +11,7 @@ import Pricing from './components/Pricing';
 import Products from './components/Products';
 import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [showTerms, setShowTerms] = React.useState(false);
@@ -116,8 +117,16 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar onHomeClick={handleHomeClick} onPricingClick={handlePricingClick} />
+    <div className="min-h-screen bg-gray-50">
+      <ScrollToTop />
+      <Navbar
+        onTermsClick={handleTermsClick}
+        onPrivacyClick={handlePrivacyClick}
+        onPricingClick={handlePricingClick}
+        onProductsClick={handleProductsClick}
+        onHowItWorksClick={handleHowItWorksClick}
+        onHomeClick={handleHomeClick}
+      />
       {showTerms ? (
         <Terms />
       ) : showPrivacy ? (
